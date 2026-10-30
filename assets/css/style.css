@@ -1,0 +1,3273 @@
+:root {
+  --fontPrimary: #392040;
+  --fontSecondary: #555;
+  --bgColorcustom: #EBBB8C;
+  --bgColorPrimary: #fff;
+  --bgColorSecondary: #fafafa;
+  --buttonTextColor: #fff;
+  --buttonColor: linear-gradient(
+    135deg,
+    var(--fontPrimary),
+    var(--fontPrimary),
+    var(--fontPrimary)
+  );
+
+  /* --fontPrimary : #ba9a50;
+  --fontSecondary : #fff;
+  --bgColorPrimary: #000;
+  --bgColorSecondary : #111;
+  --buttonTextColor: #fff;
+  --buttonColor: linear-gradient(135deg, var(--fontPrimary), var(--fontPrimary), var(--fontPrimary));  */
+}
+
+.aboutSection .floorPlanSectionTitle,
+.bannerMainTitle,
+.bannerPrice,
+.price-title,
+.quoteTitle,
+.tourHeading {
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* custom css  */
+.rera-logo-d {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+@media (max-width: 1280px) {
+  .headerNav {
+    gap: 10px;
+    margin: 0 20px;
+  }
+}
+
+.map-image-container iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.amenitiesDownload,
+.bannerIntroSection,
+.galleryDownload {
+  text-align: center;
+}
+
+.bannerOfferSection {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.bannerOffer {
+  background: var(--bgColorcustom);
+  /* border: 2px solid rgba(229, 185, 115, .3); */
+  border-radius: 12px;
+  padding: 10px 20px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  width: 100%;
+  max-width: 600px;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.offerText {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fontPrimary);
+  margin-bottom: 5px;
+}
+.offerText:last-child {
+  margin-bottom: 0px;
+}
+
+.quotePopupClose,
+.quoteSubmit {
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.highlightsList li,
+.overviewDescription {
+  line-height: 1.8;
+  color: var(--fontSecondary);
+  font-size: 16px;
+}
+
+.amenitiesDownloadBtn::before,
+.floorPlanCta::before,
+.galleryDownloadBtn::before,
+.map-cta::before,
+.overviewBrochureButton::before,
+.price-get-details::before,
+.quoteSubmit::before,
+.requestButton::before,
+.bannerOverlayBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: 3s infinite shimmer;
+}
+
+.amenitiesDownloadBtn:hover,
+.floorPlanCta:hover,
+.galleryDownloadBtn:hover,
+.map-cta:hover,
+.overviewBrochureButton:hover,
+.quoteSubmit:hover,
+.requestButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(229, 185, 115, 0.5);
+}
+
+.floorPlanCta:active,
+.map-cta:active,
+.overviewBrochureButton:active,
+.price-get-details:active,
+.quoteSubmit:active,
+.requestButton:active {
+  transform: translateY(-1px);
+}
+
+.quotePopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+}
+
+.quotePopupOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.quotePopupContent {
+  position: relative;
+  background: var(--bgColorPrimary);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0px 5px var(--fontPrimary);
+  /* border: 1px solid var(--fontPrimary); */
+  animation: 0.3s ease-out popupSlideIn;
+  z-index: 1;
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.quotePopupClose {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: 0 0;
+  color: var(--fontPrimary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.quotePopupClose:hover {
+  background: rgba(184, 156, 148, 0.15);
+}
+
+.quotePopup .quoteForm {
+  background: 0 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.quotePopup .quoteTitle {
+  font-size: 28px;
+  margin-bottom: 1.5vhx;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.quotePopup .quoteInput,
+.quotePopup .quotePhoneInput,
+.quotePopup .quoteSelect {
+  font-size: 16px;
+  margin: 0px 0 1.5vh;
+  padding: 10px 22px;
+}
+
+.quotePopup .quoteSubmit {
+  margin-top: 1vh;
+  font-size: 15px;
+  padding: 10px 25px;
+}
+
+.overviewSection {
+  background: var(--bgColorPrimary);
+  padding: 25px 0 35px;
+}
+
+.overviewContainer {
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+  max-width: 1300px;
+}
+
+.overviewDescriptionSection {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.overviewContent {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  /* min-height: 500px */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.overviewTextSection {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.amenitiesTitle,
+.galleryTitle,
+.highlightsTitle,
+.map-title,
+.overviewTitle {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  background: var(--fontPrimary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  line-height: 1.5;
+}
+
+.highlightsTitle{
+  text-align: left !important;
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+.overviewDescription {
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+.highlightsList {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.highlightsList li {
+  margin-bottom: 10px;
+  padding-left: 0px;
+  position: relative;
+}
+
+/* .highlightsList li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--fontPrimary);
+  font-weight: 700;
+  font-size: 18px;
+} */
+
+.overviewBrochureButton {
+  background: var(--buttonColor);
+  color: var(--buttonTextColor);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(229, 185, 115, 0.3);
+  display: block;
+  /* margin: 0 auto; */
+  position: relative;
+  overflow: hidden;
+}
+
+.overviewImageSection {
+  display: block;
+}
+
+.overviewImage {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--bgColorcustom);
+  transition: transform 0.3s;
+}
+
+.amenitiesSlide:hover,
+.gallerySlide:hover,
+.overviewImage:hover,
+.videoThumbnail:hover {
+  transform: scale(1.02);
+}
+
+.amenitiesSection,
+.floorPlanSection,
+.gallerySection,
+.priceSection {
+  padding: 80px 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.8s ease-out;
+}
+.amenitiesSection {
+  background: var(--bgColorPrimary);
+}
+.priceSection {
+  background: var(--bgColorSecondary);
+}
+.floorPlanSection {
+  background: var(--bgColorPrimary);
+}
+.gallerySection {
+  background: var(--bgColorSecondary);
+}
+
+.amenitiesSection.is-visible,
+.floorPlanSection.is-visible,
+.gallerySection.is-visible,
+.priceSection.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.amenitiesContainer,
+.galleryContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+}
+
+.galleryCarousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 62px 0 62px 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+  background: var(--bgColorcustom);
+  padding: 18px 18px;
+}
+.amenitiesCarousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 58px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+  background: var(--bgColorcustom);
+  padding: 20px 14px 20px 20px;
+}
+
+.amenitiesTrack {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+  /* width: 600% */
+}
+
+.amenitiesSlide {
+  width: 16.666%;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+@media (max-width: 1024px) {
+  .headerContainer,
+  .overviewContainer {
+    padding: 0 30px;
+  }
+
+  .burgerMenu {
+    display: flex;
+  }
+  .headerContactSection {
+    display: none;
+  }
+  .headerNav.active,
+  .headerNav.active .headerLink {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .headerNav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 25px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* box-shadow: 0 10px 40px rgba(0, 0, 0, .6); */
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    margin: 0;
+    backdrop-filter: blur(10px);
+  }
+
+  .headerNav.active {
+    visibility: visible;
+  }
+
+  .headerLink {
+    font-size: 15px;
+  }
+
+  .overviewContent {
+    gap: 40px;
+  }
+
+  .amenitiesTrack {
+    width: 100%;
+  }
+
+  .amenitiesSlide {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .amenitiesCarousel {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px 14px; */
+  }
+
+  .amenitiesTrack {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 19.5px;
+  }
+
+  .amenitiesSlide {
+    width: calc(33.333% - 14px);
+    flex-shrink: 0;
+    margin: 0;
+  }
+}
+
+.amenitiesImageContainer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 40px;
+}
+
+.amenitiesImage,
+.galleryImage,
+.price-floor-plan img,
+.tourImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.amenitiesLightboxClose:hover,
+.amenitiesSlide:hover .amenitiesImage,
+.galleryLightboxClose:hover,
+.gallerySlide:hover .galleryImage {
+  transform: scale(1.1);
+}
+
+.amenitiesTextOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: #fff;
+  padding: 30px 20px 20px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  border-radius: 50px;
+}
+
+.amenitiesDownloadBtn,
+.amenitiesNext,
+.amenitiesPrev,
+.galleryDownloadBtn,
+.requestButton {
+  color: var(--buttonTextColor);
+  box-shadow: 0 4px 15px rgba(229, 185, 115, 0.3);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.amenitiesNext,
+.amenitiesPrev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--buttonColor);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.amenitiesPrev,
+.galleryPrev {
+  left: 25px;
+}
+
+.amenitiesNext,
+.galleryNext {
+  right: 25px;
+}
+
+.amenitiesNext:hover,
+.amenitiesPrev:hover,
+.galleryNext:hover,
+.galleryPrev:hover {
+  background: var(--buttonColor);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(229, 185, 115, 0.5);
+}
+
+.amenitiesDownloadBtn,
+.galleryDownloadBtn,
+.requestButton {
+  background: var(--buttonColor);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+}
+
+.amenitiesLightbox,
+.galleryLightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(10px);
+}
+
+.amenitiesLightbox.active,
+.galleryLightbox.active {
+  display: flex;
+}
+
+.amenitiesLightboxContent,
+.galleryLightboxContent {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amenitiesLightboxImage,
+.galleryLightboxImage {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.floorPlanCta,
+.galleryNext,
+.galleryPrev,
+.price-get-details {
+  box-shadow: 0 4px 15px rgba(229, 185, 115, 0.3);
+}
+
+.amenitiesLightboxClose,
+.galleryLightboxClose {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: var(--buttonColor);
+  border: none;
+  color: var(--buttonTextColor);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.amenitiesLightboxNext,
+.amenitiesLightboxPrev,
+.galleryLightboxNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--buttonColor);
+  border: none;
+  color: var(--buttonTextColor);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.map-dropdown-btn {
+  justify-content: space-between;
+}
+
+.amenitiesLightboxPrev,
+.galleryLightboxPrev {
+  left: 5px;
+}
+
+.amenitiesLightboxNext,
+.galleryLightboxNext {
+  right: 5px;
+}
+
+.amenitiesLightboxNext:hover,
+.amenitiesLightboxPrev:hover,
+.galleryLightboxNav:hover {
+  background: var(--buttonColor);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.amenitiesLightboxTitle {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.amenitiesLightboxCounter {
+  position: absolute;
+  background: var(--buttonColor);
+  top: 5px;
+  left: 5px;
+  color: var(--buttonTextColor);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.price-card::before,
+.price-title {
+  background: var(--fontPrimary);
+}
+
+.price-heading-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.price-title {
+  font-size: 28px;
+  font-weight: 700;
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: relative;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.price-container {
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+  gap: 30px;
+  place-content: center;
+  max-width: 1200px;
+}
+
+.price-card {
+  background: var(--bgColorSecondary);
+  border-radius: 20px;
+  padding: 5px;
+  border: 1px solid var(--fontPrimary);
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  background: var(--bgColorPrimary);
+}
+
+.price-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+
+.floorPlanCard:hover,
+.price-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--fontPrimary);
+  box-shadow: 0 00px 10px var(--fontPrimary);
+}
+
+.price-floor-plan {
+  margin-bottom: 20px;
+  border-radius: 10px 10px;
+  overflow: hidden;
+  height: 200px;
+}
+
+.aboutSectionQr img:hover,
+.floorPlanCard:hover img,
+.price-card:hover .price-floor-plan img,
+.videoThumbnail:hover .tourImage {
+  transform: scale(1.05);
+}
+
+.price-details {
+  color: #fff;
+  border-top: 1px solid #ababab;
+  padding: 10px 0 0 0;
+}
+
+.price-row {
+  padding: 0px 0 12px;
+  line-height: 1.5;
+  display: block;
+  text-align: center;
+}
+.price-row-bhk {
+  padding: 5px 0 15px;
+  line-height: 1.5;
+  display: block;
+  text-align: center;
+}
+.price-value .bhk-border::before {
+  content: "";
+  color: #ba9a50;
+}
+.price-onw {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fontSecondary);
+  letter-spacing: 1px;
+  margin-top: -5px;
+}
+.connectivity-item:last-child {
+  border-bottom: none;
+}
+
+.price-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fontSecondary);
+  /* letter-spacing: 1px; */
+  margin-top: -5px;
+}
+
+.price-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--fontSecondary);
+  /* letter-spacing: 1px; */
+}
+
+.price-value.highlight {
+  color: var(--fontPrimary);
+  font-size: 22px;
+}
+
+.price-get-details,
+.price-get-details:hover {
+  background: var(--buttonColor);
+  color: var(--buttonTextColor);
+}
+
+.price-get-details {
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  margin-top: 6px;
+}
+
+.price-get-details:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(229, 185, 115, 0.5);
+}
+
+.galleryTrack {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+  width: 700%;
+}
+
+.gallerySlide {
+  width: 14.285%;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+@media (max-width: 1024px) {
+  .amenitiesContainer {
+    padding: 0 30px;
+  }
+
+  .amenitiesImageContainer {
+    height: 350px;
+  }
+
+  .price-container {
+    padding: 0 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+
+  .price-floor-plan {
+    height: 180px;
+  }
+
+  .galleryTrack {
+    width: 100%;
+  }
+
+  .gallerySlide {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .galleryCarousel {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 20px 18px; */
+  }
+
+  .galleryNext,
+  .galleryPrev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .galleryTrack {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .gallerySlide {
+    width: calc(33.333% - 14px);
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .galleryPrev {
+    left: 25px;
+  }
+
+  .galleryNext {
+    right: 25px;
+  }
+}
+
+.galleryImageContainer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 50px 0 50px 0;
+}
+
+.galleryNext,
+.galleryPrev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--buttonColor);
+  border: none;
+  color: var(--buttonTextColor);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: 0.3s;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.galleryLightboxCounter {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: var(--buttonColor);
+  color: var(--buttonTextColor);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+@media (max-width: 1024px) {
+  .galleryContainer {
+    padding: 0 30px;
+  }
+
+  .galleryTitle {
+    font-size: 42px;
+  }
+
+  .galleryImageContainer {
+    height: 350px;
+    
+  }
+}
+
+.floorPlanSectionTitle {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--fontPrimary);
+  margin-bottom: 30px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.floorPlanCarousel {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.floorPlanSlides,
+.floorPlanSlidesContainer {
+  display: contents;
+}
+
+.floorPlanCard {
+  background: var(--bgColorcustom);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(229, 185, 115, 0.2);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.floorPlanOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+}
+
+.floorPlanCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.floorPlanCard h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fontSecondary);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.floorPlanOverlay {
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.floorPlanButton,
+.floorPlanButton:hover {
+  background: var(--buttonColor);
+}
+
+.floorPlanCard:hover .floorPlanOverlay {
+  opacity: 1;
+}
+
+.floorPlanButton {
+  color: var(--buttonTextColor);
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.floorPlanButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(229, 185, 115, 0.3);
+}
+
+.floorPlanIndicators,
+.floorPlanNext,
+.floorPlanPrev {
+  display: none;
+}
+
+.floorPlanCta {
+  background: var(--buttonColor);
+  color: var(--buttonTextColor);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  margin: 40px auto 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutSection,
+.virtualTourSection {
+  padding: 80px 0;
+  color: #fff;
+  background: var(--bgColorSecondary);
+}
+.mapSection {
+  background: var(--bgColorPrimary);
+  padding: 80px 0;
+  color: var(--fontSecondary);
+}
+.aboutSection {
+  background: var(--bgColorPrimary);
+  padding: 40px 0;
+  color: var(--fontSecondary);
+}
+
+.footerWrapper,
+.map-container,
+.tourContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.map-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.map-left {
+  position: relative;
+}
+
+.map-image-container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+  border: 2px solid var(--bgColorcustom);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.map-cta {
+  box-shadow: 0 4px 15px rgba(229, 185, 115, 0.3);
+}
+
+.map-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.map-dropdown {
+  background: var(--bgColorSecondary);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.map-dropdown:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(229, 185, 115, 0.3);
+}
+
+.map-dropdown-btn {
+  width: 100%;
+  background: 0 0;
+  border: none;
+  color: var(--fontSecondary);
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.connectivity-item:hover,
+.map-dropdown-btn:hover {
+  background: rgba(229, 185, 115, 0.1);
+}
+
+.map-dropdown-btn.active {
+  background: var(--buttonColor);
+  color: var(--buttonTextColor);
+}
+
+.map-arrow {
+  transition: transform 0.3s;
+  font-size: 18px;
+}
+
+.map-arrow.active {
+  transform: rotate(180deg);
+  color: var(--fontPrimary);
+}
+
+.map-dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s;
+  background: var(--bgColorSecondary);
+}
+
+.map-dropdown-content.active {
+  max-height: 1000px;
+}
+
+.connectivity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background 0.3s;
+}
+.connectivity-item .location {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--fontSecondary);
+  flex: 1;
+}
+
+.connectivity-item .time {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fontPrimary);
+  background: rgba(229, 185, 115, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.map-cta {
+  background: var(--buttonColor);
+  color: var(--buttonTextColor);
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tourRow {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.tourColumn {
+  flex: 1;
+  max-width: 660px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 0px;
+  /* border: 1px solid #ccc; */
+  transition: 0.3s;
+}
+
+.tourVideoWrapper,
+.videoThumbnail {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.tourColumn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(229, 185, 115, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.tourVideoWrapper {
+  margin-bottom: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.videoThumbnail {
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.playButtonOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
+}
+
+.aboutSection .floorPlanSectionTitle {
+  background: var(--fontPrimary);
+}
+
+.videoThumbnail:hover .playButtonOverlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.playButton {
+  width: 110px;
+  height: 80px;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+  /* box-shadow: 0 8px 25px rgba(229, 185, 115, .4) */
+  background-color: #0000006b;
+}
+
+.playButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px #0000006b;
+}
+
+.playButton::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 25px solid #fff;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.aboutSection .floorPlanSectionTitle {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: relative;
+  line-height: 1.5;
+}
+
+.aboutSectionDescription {
+  margin: 0 auto;
+  padding: 0 40px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--fontSecondary);
+  text-align: center;
+  font-weight: 400;
+}
+
+.readMoreLink {
+  color: var(--fontPrimary) !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+  display: inline-block;
+  position: relative;
+}
+
+.readMoreLink:hover {
+  color: var(--fontPrimary) !important;
+  transform: translateY(-2px);
+}
+
+.readMoreLink::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--buttonColor);
+  transition: width 0.3s;
+}
+
+.readMoreLink:hover::after {
+  width: 100%;
+}
+
+.footerDisclaimer,
+.footerLinks p {
+  font-size: 8px;
+  text-align: center;
+}
+
+.footerContainer {
+  background: var(--bgColorSecondary);
+  color: #333333;
+  padding: 60px 0 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footerList {
+  margin-bottom: 30px;
+}
+
+.footerAdvertiser,
+.footerProjectNumber,
+.footerRegistration {
+  font-size: 8px;
+  line-height: 1.2;
+  color: #abaaaa;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.footerPrivacy,
+.footerTerms,
+.reraLink {
+  color: var(--fontPrimary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.footerPrivacy:hover,
+.footerTerms:hover,
+.reraLink:hover {
+  color: var(--fontPrimary);
+  text-decoration: underline;
+}
+
+.footerDisclaimer {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  padding: 0 40px;
+  line-height: 1.6;
+  color: #abaaaa;
+  font-style: italic;
+}
+
+.footerDisclaimer strong {
+  color: var(--fontPrimary);
+  font-weight: 600;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 0 40px;
+}
+
+.aboutSectionQr {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.aboutSectionQr img {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+  width: auto;
+}
+
+.footerLinks p {
+  /* color: #e8eef3; */
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .quotePopupContent {
+    padding: 30px 25px;
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .quotePopup .quoteTitle {
+    font-size: 24px;
+  }
+
+  .offerText {
+    font-size: 16px;
+  }
+
+  .quotePopup .quoteInput,
+  .quotePopup .quotePhoneInput,
+  .quotePopup .quoteSelect {
+    padding: 12px 14px;
+  }
+
+  .quotePopup .quoteSubmit {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  /* .headerNav.active,
+  .headerNav.active .headerLink {
+    opacity: 1;
+    transform: translateY(0)
+  } */
+
+  .headerContainer {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .headerLink {
+    font-size: 18px;
+    padding: 12px 0;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 0.3s;
+  }
+
+  .headerNav.active .headerLink:first-child {
+    transition-delay: 0.1s;
+  }
+
+  .headerNav.active .headerLink:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+
+  .headerNav.active .headerLink:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  .headerNav.active .headerLink:nth-child(4) {
+    transition-delay: 0.25s;
+  }
+
+  .headerNav.active .headerLink:nth-child(5) {
+    transition-delay: 0.3s;
+  }
+
+  .headerNav.active .headerLink:nth-child(6) {
+    transition-delay: 0.35s;
+  }
+
+  .headerNav.active .headerLink:nth-child(7) {
+    transition-delay: 0.4s;
+  }
+
+  .headerNav.active .headerLink:nth-child(8) {
+    transition-delay: 0.45s;
+    margin-top: 0px;
+  }
+
+  /* .headerContactSection {
+    display: none
+  } */
+
+  /* .bannerSectionMain {
+    padding-top: 70px;
+    padding-bottom: 20px
+  } */
+
+  /*.bannerImageContainer::before {
+    padding-top: 125%
+  } */
+
+  .bannerOfferSection {
+    margin: 15px 0;
+  }
+
+  .bannerOffer {
+    padding: 12px 16px;
+    box-shadow: 0 0 3px var(--fontPrimary);
+  }
+
+  .quoteForm {
+    padding: 30px 25px;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .quoteSubTitle,
+  .readMoreLink {
+    font-size: 15px;
+  }
+
+  .aboutSection,
+  .amenitiesSection,
+  .floorPlanSection,
+  .gallerySection,
+  .mapSection,
+  .overviewSection,
+  .priceSection,
+  .virtualTourSection {
+    padding: 60px 0;
+  }
+
+  .amenitiesContainer,
+  .footerLinks,
+  .footerWrapper,
+  .galleryContainer,
+  .map-container,
+  .overviewContainer,
+  .tourContainer {
+    padding: 0 20px;
+  }
+
+  .overviewDescriptionSection {
+    margin-bottom: 40px;
+  }
+
+  .overviewContent {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .overviewTextSection {
+    padding-right: 0;
+    order: 1;
+  }
+
+  .overviewImageSection {
+    order: 2;
+  }
+
+  .overviewTitle {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+
+  .overviewDescription {
+    font-size: 16px;
+    text-align: justify;
+    margin-bottom: 30px;
+  }
+
+  .highlightsTitle {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+
+  .highlightsList li {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .amenitiesTitle,
+  .floorPlanSectionTitle,
+  .galleryTitle,
+  .map-title,
+  .price-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .amenitiesImageContainer,
+  .galleryImageContainer,
+  .map-image-container {
+    height: 300px;
+  }
+
+  .amenitiesTextOverlay {
+    font-size: 20px;
+    padding: 25px 15px 15px;
+  }
+
+  .amenitiesLightboxNext,
+  .amenitiesLightboxPrev,
+  .amenitiesLightboxClose,
+  .amenitiesNext,
+  .amenitiesPrev,
+  .galleryLightboxNav,
+  .galleryNext,
+  .galleryPrev,
+  .galleryLightboxClose {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .amenitiesLightboxPrev,
+  .galleryLightboxPrev {
+    left: 5px;
+  }
+
+  .amenitiesLightboxNext,
+  .galleryLightboxNext {
+    right: 5px;
+  }
+
+  .amenitiesLightboxTitle {
+    font-size: 20px;
+    /* bottom: -50px */
+  }
+
+  .amenitiesLightboxCounter {
+    font-size: 14px;
+  }
+
+  .price-container {
+    padding: 0 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .price-card {
+    padding: 15px;
+  }
+
+  .price-card::before {
+    display: none;
+  }
+
+  .price-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .price-floor-plan {
+    height: 120px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .price-row {
+    align-items: center;
+    padding: 8px 0;
+    line-height: 1.5;
+  }
+  .price-row-bhk {
+    align-items: center;
+    padding: 8px 0;
+    line-height: 1.5;
+  }
+
+  .price-label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .price-value {
+    font-size: 16px;
+  }
+
+  .price-value.highlight {
+    font-size: 18px;
+  }
+
+  .galleryLightboxCounter {
+    font-size: 14px;
+    /* top: auto;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: 0 0;
+    color: var(--fontPrimary) */
+  }
+
+  .floorPlanCarousel {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .floorPlanSlidesContainer {
+    display: block !important;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+  }
+
+  .floorPlanSlides {
+    display: flex !important;
+    will-change: transform;
+    display: flex !important;
+    transition: transform 0.5s;
+    width: 300%;
+  }
+
+  .floorPlanCarousel {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  .floorPlanCard {
+    width: 33.333%;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .floorPlanCard img {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 15px;
+  }
+
+  .floorPlanCard h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .floorPlanOverlay {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 12px;
+  }
+
+  .floorPlanButton {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+
+  .floorPlanNext,
+  .floorPlanPrev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--fontPrimary);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .floorPlanPrev {
+    left: 10px;
+  }
+
+  .floorPlanNext {
+    right: 10px;
+  }
+
+  .floorPlanNext:hover,
+  .floorPlanPrev:hover {
+    background: var(--fontPrimary);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .floorPlanIndicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .floorPlanDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(229, 185, 115, 0.3);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .floorPlanDot.active {
+    background: var(--fontPrimary);
+    transform: scale(1.2);
+  }
+
+  .floorPlanCta {
+    padding: 12px 30px;
+    font-size: 16px;
+    margin-top: 30px;
+  }
+
+  .map-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .map-dropdown-btn {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+
+  .connectivity-item {
+    padding: 12px 20px;
+  }
+
+  .connectivity-item .location {
+    font-size: 13px;
+  }
+
+  .connectivity-item .time {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+
+  .map-cta,
+  .requestButton {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+
+  .tourRow {
+    gap: 30px;
+  }
+
+  .tourColumn {
+    max-width: 100%;
+    padding: 25px;
+  }
+
+  .videoThumbnail {
+    height: 250px;
+  }
+
+  .playButton {
+    width: 100px;
+    height: 70px;
+  }
+
+  .playButton::before {
+    border-left: 18px solid #fff;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+  }
+
+  .aboutSection .floorPlanSectionTitle {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .aboutSectionDescription {
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .footerContainer {
+    padding: 50px 0 80px;
+  }
+
+  .footerAdvertiser,
+  .footerProjectNumber,
+  .footerRegistration {
+    font-size: 10px;
+    margin-bottom: 7px;
+  }
+
+  .footerDisclaimer {
+    padding: 0 20px;
+    font-size: 10px;
+    margin-bottom: 25px;
+  }
+
+  .footerLinks {
+    gap: 20px;
+  }
+
+  .aboutSectionQr {
+    gap: 15px;
+  }
+
+  .aboutSectionQr img {
+    height: 100px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .quotePopupContent {
+    padding: 25px 20px;
+    margin: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .quotePopup .quoteTitle {
+    font-size: 22px;
+  }
+
+  .offerText {
+    font-size: 16px;
+  }
+
+  .quotePopup .quoteInput,
+  .quotePopup .quotePhoneInput,
+  .quotePopup .quoteSelect {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .quotePopup .quoteSubmit {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .amenitiesSection,
+  .floorPlanSection,
+  .gallerySection,
+  .priceSection {
+    padding: 40px 0;
+  }
+  .overviewSection {
+    padding: 0px 0 40px;
+  }
+
+  .amenitiesContainer,
+  .footerLinks,
+  .footerWrapper,
+  .galleryContainer,
+  .map-container,
+  .overviewContainer,
+  .tourContainer {
+    padding: 0 15px;
+  }
+
+  .overviewDescriptionSection {
+    margin-bottom: 30px;
+  }
+
+ .overviewTitle {
+    font-size: 20px;
+  }
+  .highlightsTitle {
+    font-size: 17px;
+    text-align: center !important;
+  }
+  .overviewDescription {
+    font-size: 15px;
+  }
+
+  .highlightsList li {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .amenitiesDownloadBtn,
+  .galleryDownloadBtn,
+  .overviewBrochureButton,
+  .requestButton {
+    padding: 10px 25px;
+    font-size: 15px;
+  }
+
+  .aboutSection .floorPlanSectionTitle,
+  .amenitiesTitle,
+  .galleryTitle,
+  .map-title,
+  .price-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .amenitiesImageContainer,
+  .galleryImageContainer,
+  .map-image-container {
+    height: 250px;
+  }
+
+  .amenitiesTextOverlay {
+    font-size: 18px;
+    padding: 20px 10px 10px;
+  }
+
+  .amenitiesLightboxClose,
+  .amenitiesLightboxNext,
+  .amenitiesLightboxPrev,
+  .amenitiesNext,
+  .amenitiesPrev,
+  .galleryLightboxClose,
+  .galleryLightboxNav,
+  .galleryNext,
+  .galleryPrev {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .amenitiesLightboxPrev,
+  .galleryLightboxPrev {
+    left: 0;
+  }
+
+  .amenitiesLightboxNext,
+  .galleryLightboxNext {
+    right: 0;
+  }
+
+  .amenitiesLightboxClose,
+  .galleryLightboxClose {
+    top: -35px;
+  }
+
+  .amenitiesLightboxTitle {
+    font-size: 18px;
+    /* bottom: -40px */
+  }
+
+  .amenitiesLightboxCounter,
+  .galleryLightboxCounter {
+    font-size: 12px;
+  }
+
+  .footerLinks p {
+    font-size: 9px;
+  }
+
+  .price-container {
+    padding: 0 15px;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .price-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .price-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .price-floor-plan {
+    display: none;
+  }
+
+  .price-row {
+    padding: 0 0 6px;
+    text-align: center;
+  }
+   .price-row-bhk {
+    padding: 0 0 6px;
+    text-align: center;
+  }
+  
+  .price-label {
+    font-size: 13px;
+    /* letter-spacing: normal; */
+  }
+
+  .price-value {
+    font-size: 16px;
+    /* letter-spacing: normal; */
+  }
+
+  .price-value .bhk-border::before {
+  content: "";
+  color: #ba9a50;
+}
+
+  .price-value.highlight {
+    font-size: 18px;
+    margin: 5px 0 0px 0px;
+  }
+
+  .amenitiesCarousel, .galleryCarousel {
+  /* border-radius: 55px; */
+  padding: 0;
+}
+
+  .floorPlanSectionTitle {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: var(--fontPrimary);
+  }
+
+  .floorPlanCarousel {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    position: relative;
+    max-width: 100%;
+  }
+
+  .floorPlanSlidesContainer {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+  }
+
+  .floorPlanSlides {
+    display: flex !important;
+    transition: transform 0.5s ease-in-out;
+    width: 300%;
+  }
+
+  .floorPlanCard {
+    padding: 12px;
+    width: 33.333%;
+    flex-shrink: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .floorPlanCard img {
+    height: 250px;
+    margin-bottom: 12px;
+  }
+
+  .floorPlanCard h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .floorPlanOverlay {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border-radius: 12px;
+  }
+
+  .floorPlanButton {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 10px;
+  }
+
+  .floorPlanNext,
+  .floorPlanPrev {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .floorPlanPrev {
+    left: 5px;
+  }
+
+  .floorPlanNext {
+    right: 5px;
+  }
+
+  .floorPlanIndicators {
+    display: none;
+  }
+
+  .floorPlanDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .floorPlanCta {
+    padding: 10px 25px;
+    font-size: 15px;
+    margin-top: 25px;
+  }
+
+  .aboutSection,
+  .mapSection,
+  .virtualTourSection {
+    padding: 40px 0;
+  }
+
+  .map-content,
+  .tourRow {
+    gap: 25px;
+  }
+
+  .map-dropdown-btn {
+    padding: 14px 16px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .connectivity-item {
+    padding: 10px 16px;
+  }
+
+  .connectivity-item .location,
+  .readMoreLink {
+    font-size: 14px;
+  }
+
+  .connectivity-item .time {
+    font-size: 14px;
+    padding: 2px 8px;
+  }
+
+  .map-cta {
+    padding: 10px 25px;
+    font-size: 15px;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .tourColumn {
+    padding: 20px;
+  }
+
+  .videoThumbnail {
+    height: 200px;
+  }
+
+  .playButton {
+    width: 90px;
+    height: 60px;
+  }
+
+  .playButton::before {
+    border-left: 20px solid #fff;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+  }
+
+  .aboutSectionDescription {
+    padding: 0 15px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .clampText {
+    margin-bottom: 12px;
+  }
+
+  .footerContainer {
+    padding: 40px 0 80px;
+  }
+
+  .footerAdvertiser,
+  .footerProjectNumber,
+  .footerRegistration {
+    font-size: 9px;
+    margin-bottom: 5px;
+  }
+
+  .footerDisclaimer {
+    padding: 0 15px;
+    font-size: 9px;
+    margin-bottom: 20px;
+  }
+
+  .footerLinks {
+    gap: 15px;
+  }
+
+  .aboutSectionQr {
+    gap: 12px;
+    align-items: center;
+  }
+
+  .aboutSectionQr img {
+    height: 80px !important;
+    width: auto;
+  }
+}
+
+.mobileBottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bgColorPrimary);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0px;
+  z-index: 2147483000;
+  gap: 0px;
+  border-top: 1px solid var(--fontPrimary);
+  pointer-events: auto;
+}
+
+.mobileBottomBar a {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0a0a0a;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  overflow: visible;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+.mobileBottomBar .callButton {
+  cursor: pointer;
+}
+
+.mobileBottomBar .callButton img {
+  pointer-events: none;
+}
+
+.callButton,
+.pdfButton {
+  background-color: transparent;
+}
+
+.whatsappButton {
+  background: linear-gradient(135deg, #25d366 0, #1ebe57 100%);
+  color: #fff !important;
+  /* border-radius: 4px; */
+}
+
+.callButton,
+.pdfButton {
+  border-right: 1px solid #b5945f;
+}
+
+.mobileBottomBar svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+@media (min-width: 1024px) {
+  .mobileBottomBar {
+    display: none;
+  }
+}
+
+/* =========================================
+   CHATBOT MOBILE FIX
+   ========================================= */
+
+@media (max-width: 1023px) {
+
+ /* ============================================
+   Adani 9 PBR Seawoods CHATBOT
+   MOBILE RESPONSIVE FIX
+   ============================================ */
+
+    /* -----------------------------------------
+       CLOSED CHATBOT BUTTON
+       ----------------------------------------- */
+
+    #re-chatbot-iframe-host {
+        position: fixed !important;
+
+        left: auto !important;
+        right: 10px !important;
+        bottom: 72px !important;
+
+        width: 72px !important;
+        height: 84px !important;
+
+        z-index: 999999 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: visible !important;
+
+        transform: none !important;
+    }
+
+
+    /* -----------------------------------------
+       OPEN CHATBOT
+       ----------------------------------------- */
+
+    #re-chatbot-iframe-host.active {
+
+        position: fixed !important;
+
+        left: auto !important;
+        right: 10px !important;
+
+        /*
+         * Keep chatbot ABOVE:
+         * Call / Brochure / WhatsApp bar
+         */
+        bottom: 70px !important;
+
+        /*
+         * Mobile popup width
+         */
+        width: calc(100vw - 20px) !important;
+
+        /*
+         * Do NOT allow it to become fullscreen
+         */
+        max-width: 375px !important;
+
+        /*
+         * Mobile popup height
+         */
+        height: calc(100vh - 110px) !important;
+
+        /*
+         * Desktop-like maximum size
+         */
+        max-height: 560px !important;
+
+        min-height: 420px !important;
+
+        z-index: 2147483646 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: hidden !important;
+
+        transform: none !important;
+
+        border-radius: 16px !important;
+
+        box-sizing: border-box !important;
+
+        background: transparent !important;
+    }
+
+
+    /* -----------------------------------------
+       MAKE THE IFRAME FILL THE POPUP
+       ----------------------------------------- */
+
+    #re-chatbot-iframe-host.active iframe {
+
+        display: block !important;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        max-width: none !important;
+        max-height: none !important;
+
+        border: 0 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border-radius: 16px !important;
+
+        box-sizing: border-box !important;
+    }
+
+}
+
+
+/* ============================================
+   SMALL PHONES
+   ============================================ */
+
+@media (max-width: 480px) {
+
+    #re-chatbot-iframe-host.active {
+
+        right: 10px !important;
+        left: auto !important;
+
+        width: calc(100vw - 20px) !important;
+
+        max-width: 375px !important;
+
+        /*
+         * Leave room for:
+         * top + bottom mobile UI
+         */
+        height: calc(100vh - 105px) !important;
+
+        max-height: 560px !important;
+
+        min-height: 400px !important;
+
+        bottom: 65px !important;
+
+        border-radius: 16px !important;
+    }
+
+}
+
+
+/* ============================================
+   VERY SMALL PHONES
+   ============================================ */
+
+@media (max-width: 360px) {
+
+    #re-chatbot-iframe-host.active {
+
+        right: 8px !important;
+
+        width: calc(100vw - 16px) !important;
+
+        height: calc(100vh - 95px) !important;
+
+        max-height: 520px !important;
+
+        min-height: 380px !important;
+
+        bottom: 60px !important;
+
+        border-radius: 14px !important;
+    }
+
+}
+
+/* =========================================================
+   OVERVIEW READ MORE / READ LESS
+   ========================================================= */
+
+.clampText {
+    display: -webkit-box;
+
+    margin-bottom: 15px;
+
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+}
+
+
+/* Expanded description */
+
+.clampText.expanded {
+    display: block;
+
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+
+    -webkit-box-orient: initial;
+
+    overflow: visible;
+}
+
+
+/* Read More / Read Less */
+
+.readMoreLink {
+    display: inline;
+
+    color: var(--fontPrimary);
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    font: inherit;
+}
+
+
+/* Keep the same appearance on desktop */
+
+@media (min-width: 1025px) {
+
+    .readMoreLink {
+        display: inline;
+    }
+
+    .clampText {
+        display: -webkit-box;
+
+        -webkit-line-clamp: 6;
+        line-clamp: 6;
+
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
+    }
+
+    .clampText.expanded {
+        display: block;
+
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+
+        overflow: visible;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 1024px) {
+
+    .readMoreLink {
+        display: inline;
+    }
+
+    .clampText {
+        display: -webkit-box;
+
+        -webkit-line-clamp: 6;
+        line-clamp: 6;
+
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
+    }
+
+    .clampText.expanded {
+        display: block;
+
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+
+        overflow: visible;
+    }
+}
+
+.sidedownloadBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 16px;
+  gap: 10px;
+  background: var(--buttonColor);
+  /* optional background */
+  border: 1px solid var(--fontPrimary);
+  cursor: pointer;
+  position: fixed;
+  bottom: 50%;
+  right: 25px;
+  transform: rotate(-90deg);
+  transform-origin: right center;
+  animation: bounce 5s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(10px) rotate(-90deg);
+  }
+
+  50% {
+    transform: translateX(0) rotate(-90deg);
+  }
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-content img {
+  vertical-align: middle;
+}
+
+.btn-text {
+  font-size: 16px;
+  color: var(--buttonTextColor);
+}
+
+.pdf-icon {
+  transform: rotate(90deg);
+}
+
+@media (min-width: 769px) {
+  .sidedownloadBtn {
+    z-index: 1;
+  }
+}
+@media (max-width: 768px) {
+  .sidedownloadBtn {
+    display: none;
+  }
+}
+/* Desktop - no Read More */
+@media (min-width: 1025px) {
+
+    .readMoreLink {
+        display: none;
+    }
+
+    .clampText {
+        display: block;
+        overflow: visible;
+    }
+
+}
+
+
+/* Mobile - show Read More */
+@media (max-width: 768px) {
+
+    .clampText {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 6;
+        line-clamp: 6;
+        overflow: hidden;
+    }
+
+    .readMoreLink {
+        display: inline;
+        cursor: pointer;
+    }
+
+}
+body,
+p,
+a,
+button {
+  font-family: "FuturaBt-Book", sans-serif;
+}
+button {
+  letter-spacing: 1px;
+}
+
+h1,
+.bannerPrice,
+.overviewTitle,
+.highlightsTitle,
+.amenitiesTitle,
+.price-title,
+.floorPlanSectionTitle,
+.galleryTitle,
+.map-title,
+.quoteTitle {
+  font-family: "HistoryPro-Two", sans-serif;
+}
+
+p {
+  font-weight: 400;
+}
+.popupLogo {
+  height: auto;
+}
+
+/* ===== RERA QR SECTION ===== */
+.reraQrSection {
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto 25px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.reraQrProject {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 18px;
+    color: #111;
+}
+
+.reraQrGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 30px;
+}
+
+.reraQrItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.reraQrImg {
+    width: 105px;
+    height: 105px;
+    object-fit: contain;
+    background: #fff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.reraQrTower {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: #111;
+}
+
+.reraQrNo {
+    font-size: 15px;
+    margin: 0;
+    color: #111;
+}
+
+.reraQrNo strong {
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .reraQrGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+    .reraQrSection {
+        padding: 0 15px;
+        margin: 15px auto 20px;
+    }
+
+    .reraQrProject {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    .reraQrGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px 12px;
+    }
+
+    .reraQrItem {
+        align-items: center;
+        text-align: center;
+    }
+
+    .reraQrImg {
+        width: 95px;
+        height: 95px;
+    }
+
+    .reraQrTower {
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    .reraQrNo {
+        font-size: 12px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 340px) {
+    .reraQrGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== MAHARERA LOGO ===== */
+.reraLogoWrap {
+    display: flex;
+    justify-content: center;
+    margin: 15px auto 10px;
+}
+
+.reraLogoCard {
+    width: 110px;
+    height: 110px;
+    padding: 6px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.reraLogoCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 10px;
+}
+
+@media (max-width: 575px) {
+    .reraLogoCard {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+
+/* =========================================
+   ADANI 9 PBR - COMPACT PRICE SECTION
+========================================= */
+
+.priceSection {
+    width: 100%;
+    padding: 12px 20px 20px !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Heading */
+.price-heading-container {
+    margin: 0 0 14px !important;
+    padding: 0 !important;
+}
+
+.price-title {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.25;
+    font-size: clamp(22px, 3vw, 34px);
+}
+
+/* Price cards layout */
+.price-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px !important;
+    align-items: stretch;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Individual cards */
+.price-card {
+    min-width: 0;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 12px 12px 14px !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* BHK heading */
+.price-row-bhk {
+    margin: 0 0 8px !important;
+    padding: 0 !important;
+}
+
+.price-row-bhk .price-value {
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+/* Floor plan image */
+.price-floor-plan {
+    height: 145px !important;
+    min-height: 0 !important;
+    margin: 0 0 8px !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.price-floor-plan img {
+    width: 100%;
+    height: 100%;
+    max-height: 145px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Price details */
+.price-details {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.price-details .price-row {
+    margin: 0 !important;
+    padding: 4px 0;
+    text-align: center;
+}
+
+.price-details .price-value {
+    line-height: 1.3;
+}
+
+.price-details .price-label {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* Price amount */
+.price-details .price-value.highlight {
+    font-size: 21px;
+    margin: 0;
+}
+
+/* EOI Token */
+.price-row.eoi-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 7px 4px !important;
+    margin: 2px 0 !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.eoi-row .price-label {
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.eoi-row .eoi-value {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* Button */
+.price-get-details {
+    padding: 9px 15px;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .price-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .priceSection {
+        padding: 12px 12px 20px !important;
+    }
+
+    .price-container {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 14px !important;
+    }
+
+    .price-card {
+        padding: 12px !important;
+    }
+
+    .price-floor-plan {
+        height: 165px !important;
+    }
+
+    .price-floor-plan img {
+        max-height: 165px;
+    }
+
+    .price-title {
+        font-size: 23px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+  .priceSection {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ===== One size for all section titles ===== */
+:root {
+  --sectionTitleSize: 28px;
+}
+
+.overviewTitle,
+.highlightsTitle,
+.price-title,
+.floorPlanSectionTitle,
+.aboutSection .floorPlanSectionTitle,
+.galleryTitle,
+.amenitiesTitle,
+.map-title {
+  font-size: var(--sectionTitleSize) !important;
+  line-height: 1.5 !important;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  :root { --sectionTitleSize: 36px; }
+}
+
+@media (max-width: 480px) {
+  :root { --sectionTitleSize: 20px; }
+}

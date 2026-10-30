@@ -1,0 +1,4 @@
+# Block public access to lead logs, config and dotfiles
+<FilesMatch "(\.log|\.md|\.json|\.lock|crm-config\.php)$|^\.(git|env)">
+    Require all denied
+</FilesMatch>
